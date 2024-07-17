@@ -15,7 +15,7 @@ const MovieItem = ({movie, removeMovie} : MovieItemProps) => {
                 </div>
             </div>
             <div className="post__btns">
-                <Button onClick={() => navigate(`/posts/${movie.id}`)}>Открыть</Button>
+                <Button onClick={() => navigate(`/movie/${movie.id}`)}>Открыть</Button>
                 <Button onClick={() => removeMovie(movie)}>Удалить</Button>
             </div>
         </div>

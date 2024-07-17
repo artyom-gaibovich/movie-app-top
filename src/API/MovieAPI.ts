@@ -3,12 +3,13 @@ import {IMovie} from "../interfaces/movie.interface";
 
 export default class MovieAPI {
     static async getAll(limit = 10, page = 1) {
-        const {data: fetchedMovies, headers: totalCount} = await axios.get<IMovie[]>('http://localhost:3200/api/movie/', {
+        const {data: fetchedMovies, headers: totalCount} = await axios.get<IMovie[]>('https://freetestapi.com/api/v1/movies', {
             params : {
                 _limit : limit,
                 _page : page
             }
         })
+        console.log(fetchedMovies)
         return {
             fetchedMovies : fetchedMovies,
             totalCount: totalCount['x-total-count']
@@ -16,7 +17,7 @@ export default class MovieAPI {
     }
 
     static async getById(id : number) {
-        const {data: movie} = await axios.get<IMovie>('http://localhost:3200/api/movie/')
+        const {data: movie} = await axios.get<IMovie>('http://localhost:3000/movie'+id)
         return movie
     }
 
