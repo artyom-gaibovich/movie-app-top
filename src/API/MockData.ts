@@ -1,4 +1,4 @@
-[
+export const mockData = [
     {
         id: 1,
         title: "Побег из Шоушенка",
