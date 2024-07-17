@@ -14,7 +14,7 @@ const MovieFilter = ({filter, setFilter} : MovieFilterProps) => {
                           setValue={(sort: SortableKeys) => setFilter({...filter, sort : sort})}
                           options={[
                               {value : 'title', name : 'По названию'},
-                              {value : 'body', name : 'По описанию'},
+                              {value : 'director', name : 'По режиссеру'},
                           ]}></Select>
             </div>
 

@@ -6,7 +6,7 @@ import Button from "../Button/Button"; // Подключаем интерфей�
 
 const MovieForm = ({ createMovie }: MovieFormProps) => {
     const [movie, setMovie] = useState<IMovie>({
-        id: Date.now(),
+        _id: Date.now(),
         title: '',
         year: 0,
         genre: [],
@@ -31,7 +31,7 @@ const MovieForm = ({ createMovie }: MovieFormProps) => {
         e.preventDefault();
         createMovie(movie);
         setMovie({
-            id: Date.now(),
+            _id: Date.now(),
             title: '',
             year: 0,
             genre: [],

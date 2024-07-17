@@ -4,7 +4,7 @@ import MovieAPI from "../API/MovieAPI";
 import {useObserver} from "../hooks/useObserver";
 import {IMovie} from "../interfaces/movie.interface";
 import {getPageCount} from "../utils/getPageCount";
-import {useMovies} from "../hooks/usePosts";
+import {useMovies} from "../hooks/useMovies";
 import {IMovieFilter} from "../interfaces/movie-filter.interface";
 import Button from "../components/Button/Button";
 import Modal from "../components/Modal/Modal";
@@ -34,8 +34,8 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
         setPage(page + 1)
     })
     useEffect(() => {
-        () => fetchMovies
-    }, [page, limit]);
+        fetchMovies()
+    }, [page, limit])
 
     function createMovie(newMovie: IMovie) {
         setMovies([...movies, newMovie])
@@ -43,7 +43,7 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     }
     const sortedAndSearchMovies = useMovies(movies, filter.sort, filter.query)
     function removeMovie(movie: IMovie)  {
-        setMovies(movies.filter(p => p.id !== movie.id ))
+        setMovies(movies.filter(p => p._id !== movie._id ))
     }
 
     const changePage = (page: number) => {

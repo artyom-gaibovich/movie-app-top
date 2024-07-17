@@ -1,6 +1,6 @@
 export const mockData = [
     {
-        id: 1,
+        _id: 1,
         title: "Побег из Шоушенка",
         year: 1994,
         genre: [
@@ -28,7 +28,7 @@ export const mockData = [
         ]
     },
     {
-        id: 2,
+        _id: 2,
         title: "Крестный отец",
         year: 1972,
         genre: [
@@ -58,7 +58,7 @@ export const mockData = [
         ]
     },
     {
-        id: 3,
+        _id: 3,
         title: "Темный рыцарь",
         year: 2008,
         genre: [
@@ -89,7 +89,7 @@ export const mockData = [
         ]
     },
     {
-        id: 4,
+        _id: 4,
         title: "Криминальное чтиво",
         year: 1994,
         genre: [
@@ -119,7 +119,7 @@ export const mockData = [
         ]
     },
     {
-        id: 5,
+        _id: 5,
         title: "Форрест Гамп",
         year: 1994,
         genre: [
@@ -149,7 +149,7 @@ export const mockData = [
         ]
     },
     {
-        id: 6,
+        _id: 6,
         title: "Начало",
         year: 2010,
         genre: [
@@ -180,7 +180,7 @@ export const mockData = [
         ]
     },
     {
-        id: 7,
+        _id: 7,
         title: "Матрица",
         year: 1999,
         genre: [
@@ -210,7 +210,7 @@ export const mockData = [
         ]
     },
     {
-        id: 8,
+        _id: 8,
         title: "Властелин колец: Возвращение короля",
         year: 2003,
         genre: [
@@ -241,7 +241,7 @@ export const mockData = [
         ]
     },
     {
-        id: 9,
+        _id: 9,
         title: "Темный рыцарь: Возрождение легенды",
         year: 2012,
         genre: [
@@ -270,7 +270,7 @@ export const mockData = [
         ]
     },
     {
-        id: 10,
+        _id: 10,
         title: "Интерстеллар",
         year: 2014,
         genre: [
@@ -300,7 +300,7 @@ export const mockData = [
         ]
     },
     {
-        id: 11,
+        _id: 11,
         title: "Бойцовский клуб",
         year: 1999,
         genre: [
@@ -329,7 +329,7 @@ export const mockData = [
         ]
     },
     {
-        id: 12,
+        _id: 12,
         title: "Гладиатор",
         year: 2000,
         genre: [
@@ -360,7 +360,7 @@ export const mockData = [
         ]
     },
     {
-        id: 13,
+        _id: 13,
         title: "Властелин колец: Две крепости",
         year: 2002,
         genre: [
@@ -391,7 +391,7 @@ export const mockData = [
         ]
     },
     {
-        id: 14,
+        _id: 14,
         title: "Молчание ягнят",
         year: 1991,
         genre: [
@@ -422,7 +422,7 @@ export const mockData = [
         ]
     },
     {
-        id: 15,
+        _id: 15,
         title: "Отступники",
         year: 2006,
         genre: [
@@ -453,7 +453,7 @@ export const mockData = [
         ]
     },
     {
-        id: 16,
+        _id: 16,
         title: "Спасти рядового Райана",
         year: 1998,
         genre: [
@@ -483,7 +483,7 @@ export const mockData = [
         ]
     },
     {
-        id: 17,
+        _id: 17,
         title: "Престиж",
         year: 2006,
         genre: [
@@ -514,7 +514,7 @@ export const mockData = [
         ]
     },
     {
-        id: 18,
+        _id: 18,
         title: "Слава",
         year: 1989,
         genre: [
@@ -545,7 +545,7 @@ export const mockData = [
         ]
     },
     {
-        id: 19,
+        _id: 19,
         title: "Мстители",
         year: 2012,
         genre: [
@@ -576,7 +576,7 @@ export const mockData = [
         ]
     },
     {
-        id: 20,
+        _id: 20,
         title: "Король Лев",
         year: 1994,
         genre: [

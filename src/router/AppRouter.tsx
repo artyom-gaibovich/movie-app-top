@@ -7,7 +7,7 @@ import Login from "../pages/Login";
 import {AppContext} from "../context/app.context";
 import Movies from "../pages/Movies";
 
-const AppRouter = () => {
+const AppRouter = () : JSX.Element => {
     const {default: data} = useContext(AppContext)
 
     if (data) {
@@ -15,10 +15,10 @@ const AppRouter = () => {
     }
     const privateRoutes = (
         <Routes>
-            <Route path="/" element={<About />} /> {/* Дефолтный маршрут */}
-            <Route path="/posts/:id" element={<MovieIdPage/>}/>
+            <Route path="/" element={<Movies />} /> {/* Дефолтный маршрут */}
+            <Route path="/movie/:id" element={<MovieIdPage/>}/>
             <Route path="/about" element={<About />} />
-            <Route path="/posts" element={<Movies />} />
+            <Route path="/movie" element={<Movies />} />
             <Route path="*" element={<Error />} />
         </Routes>
     );
@@ -31,7 +31,7 @@ const AppRouter = () => {
         </Routes>
     );
 
-    //return isAuth ? privateRoutes : publicRoutes;
+    return privateRoutes;
 };
 
 export default AppRouter;

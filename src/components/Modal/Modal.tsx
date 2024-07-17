@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from "./MyModal.module.css";
+import classes from "./Modal.module.css";
 import {ModalProps} from "./Modal.props";
 const Modal = ({children, visible, setVisible} : ModalProps) => {
 

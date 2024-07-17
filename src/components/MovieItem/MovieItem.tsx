@@ -9,13 +9,13 @@ const MovieItem = ({movie, removeMovie} : MovieItemProps) => {
     return (
         <div className="post">
             <div className="post__content">
-                <strong>{movie.id}, {movie.title}</strong>
+                <strong>{movie._id}, {movie.title}</strong>
                 <div>
                     {JSON.stringify(movie)}
                 </div>
             </div>
             <div className="post__btns">
-                <Button onClick={() => navigate(`/posts/${movie.id}`)}>Открыть</Button>
+                <Button onClick={() => navigate(`/movie/${movie._id}`)}>Открыть</Button>
                 <Button onClick={() => removeMovie(movie)}>Удалить</Button>
             </div>
         </div>
