@@ -26,6 +26,9 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 
 	return (
 		<header className={cn(className, styles.header)} {...props}>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
 			<motion.div
 				className={styles.mobileMenu}
 				variants={variants}
