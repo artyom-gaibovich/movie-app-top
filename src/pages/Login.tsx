@@ -4,7 +4,7 @@ import Input from "../components/Input/Input";
 
 const Login = () => {
     const login = (e: Event) => {
-        event?.preventDefault();
+        e.preventDefault();
         localStorage.setItem('auth', 'true')
     }
 

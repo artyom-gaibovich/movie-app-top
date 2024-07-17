@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import {MovieFormProps} from "./MovieForm.props";
 import Input from "../Input/Input";
 import {IMovie} from "../../interfaces/movie.interface";
-import Button from "../Button/Button"; // Подключаем интерфейс IMovie
+import Button from "../Button/Button";
+import {inspect} from "util";
+import styles from "./MovieForm.module.css"
 
 const MovieForm = ({ createMovie }: MovieFormProps) => {
     const [movie, setMovie] = useState<IMovie>({
@@ -54,7 +56,7 @@ const MovieForm = ({ createMovie }: MovieFormProps) => {
     }
 
     return (
-        <form onSubmit={addNewMovie}>
+        <form className={styles.form} onSubmit={addNewMovie}>
             <Input
                 type="text"
                 value={movie.title}
@@ -63,7 +65,6 @@ const MovieForm = ({ createMovie }: MovieFormProps) => {
             />
             <Input
                 type="number"
-                value={movie.year}
                 onChange={(e) => setMovie({ ...movie, year: parseInt(e.target.value) })}
                 placeholder="Год выпуска"
             />
