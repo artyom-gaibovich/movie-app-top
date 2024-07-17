@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
 import About from "../pages/About";
 import Error from "../pages/Error";
-import MovieIdPage from "../pages/MovieIdPage";
+import MovieIdPage from "../pages/MovieIdPage/MovieIdPage";
 import Login from "../pages/Login";
 import {AppContext} from "../context/app.context";
 import Movies from "../pages/Movies";

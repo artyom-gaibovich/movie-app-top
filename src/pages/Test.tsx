@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Test = () => {
+const Add = () => {
     return (
         <div>
         </div>
     );
 };
 
-export default Test;
+export default Add;
