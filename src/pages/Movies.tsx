@@ -51,7 +51,6 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     }
     return (
         <div className="App">
-            <Button onClick={() => setModal(true)}>Создать</Button>
             <Modal visible={isModal} setVisible={setModal}>
                 <MovieForm createMovie={createMovie}></MovieForm>
             </Modal>
