@@ -1,14 +1,15 @@
 import React from 'react';
-import MyButton from "../button/MyButton";
-import {getPagesArray} from "../../../utils/pages";
+import {PaginationProps} from "./Pagination.props";
+import {getPagesArray} from "../../utils/getPageCount";
+import Button from "../Button/Button";
 
-const Pagination = ({totalPages, page, changePage}) => {
+const Pagination = ({totalPages, page, changePage} : PaginationProps) => {
     let pagesArray = getPagesArray(totalPages)
     return (
         <div>
             <div style={{marginTop: "20px", display: "flex", justifyContent : "center"}}>
-                {pagesArray.map(page => {
-                    return <MyButton key={page} onClick={() => changePage(page)}>{page}</MyButton>
+                {pagesArray.map((page: number) => {
+                    return <Button key={page} onClick={() => changePage(page)}>{page}</Button>
                 })}
             </div>
         </div>

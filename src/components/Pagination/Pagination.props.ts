@@ -4,6 +4,7 @@ import {IMovie} from "../../interfaces/movie.interface";
 
 export interface PaginationProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children? : ReactNode;
-    movie : IMovie
-    removeMovie: (movie : IMovie) => void;
+    page : number;
+    totalPages : number;
+    changePage: (page: Number) => void;
 }

@@ -4,6 +4,6 @@ import {IMovie} from "../../interfaces/movie.interface";
 
 export interface MovieFormProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children? : ReactNode;
-    visible: boolean;
+    visible?: boolean;
     createMovie : (movie : IMovie) => void;
 }

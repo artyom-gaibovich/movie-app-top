@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {MutableRefObject, useEffect, useRef, useState} from 'react';
 import {useFetching} from "../hooks/useFetching";
 import MovieAPI from "../API/MovieAPI";
 import {useObserver} from "../hooks/useObserver";
@@ -8,6 +8,11 @@ import {useMovies} from "../hooks/usePosts";
 import {IMovieFilter} from "../interfaces/movie-filter.interface";
 import Button from "../components/Button/Button";
 import Modal from "../components/Modal/Modal";
+import MovieForm from "../components/MovieForm/MovieForm";
+import MovieFilter from "../components/MovieFilter/MovieFilter";
+import Select from "../components/Select/Select";
+import MovieList from "../components/MovieList/MovieList";
+import Pagination from "../components/Pagination/Pagination";
 
 const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
 
@@ -18,43 +23,43 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     const [limit, setLimit] = useState(10)
     const [page, setPage] = useState(1)
 
-    const lastElement= useRef()
-    const [fetchPosts, isPostsLoading, errorPosts ] = useFetching(async () => {
+    const lastElement: MutableRefObject<any>  = useRef()
+    const [fetchMovies, isMoviesLoading, errorMovies ] = useFetching(async () => {
         const {fetchedMovies, totalCount} = await MovieAPI.getAll(limit,page)
         setMovies([...movies, ...fetchedMovies])
         setTotalPages(getPageCount(totalCount, limit));
     })
 
-    useObserver(lastElement, page < totalPages, isPostsLoading, () => {
+    useObserver(lastElement, page < totalPages, isMoviesLoading, () => {
         setPage(page + 1)
     })
     useEffect(() => {
-        () => fetchPosts
+        () => fetchMovies
     }, [page, limit]);
 
-    function createPost(newMovie: IMovie) {
+    function createMovie(newMovie: IMovie) {
         setMovies([...movies, newMovie])
         setModal(false)
     }
-    const sortedAndSearchPosts = useMovies(movies, filter.sort, filter.query)
-    function removePost(movie: IMovie)  {
+    const sortedAndSearchMovies = useMovies(movies, filter.sort, filter.query)
+    function removeMovie(movie: IMovie)  {
         setMovies(movies.filter(p => p.id !== movie.id ))
     }
 
-    const changePage = (page) => {
+    const changePage = (page: number) => {
         setPage(page)
     }
     return (
         <div className="App">
             <Button onClick={() => setModal(true)}>Создать</Button>
             <Modal visible={isModal} setVisible={setModal}>
-                <PostForm createPost={createPost}></PostForm>
+                <MovieForm createMovie={createMovie}></MovieForm>
             </Modal>
             <hr style={{margin : '15px 0'}}/>
-            <PostFilter filter={filter} setFilter={setFilter}>
+            <MovieFilter filter={filter} setFilter={setFilter}>
 
-            </PostFilter>
-            <MySelect value={limit}
+            </MovieFilter>
+            <Select value={limit}
                       defaultValue="Количество фильмов на странице"
                       options={[
                           {value : 5, name :'5'},
@@ -62,18 +67,18 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
                           {value : 20, name :'20'},
                           {value : -1, name : 'Показать всё'}
                       ]}
-                      onChange={value => setLimit(value)
-                      }></MySelect>
-            {errorPosts && <h1>{errorPosts}</h1>}
-            {isPostsLoading && <h1>Идет загрузка фильмов...</h1>}
+                      setValue={(value : number) => setLimit(value)
+                      }></Select>
+            {errorMovies && <h1>{JSON.stringify(errorMovies)}</h1>}
+            {isMoviesLoading && <h1>Идет загрузка фильмов...</h1>}
 
-            <PostList remove={removePost}
-                      posts={sortedAndSearchPosts}
+            <MovieList removeMovie={removeMovie}
+                      movies={sortedAndSearchMovies}
                       title={'Список фильмов'}>
-            </PostList>
+            </MovieList>
             <div ref={lastElement}
                  style={{height : '20px', background: "black"}}></div>
-            <Pagination page={page} changePage={changePage} totalPages={totalPages}></Pagination>
+            <Pagination page={page} changePage={() => changePage} totalPages={totalPages}></Pagination>
         </div>
     );
 };

@@ -1,24 +1,24 @@
 import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
 import About from "../pages/About";
-import Posts from "../pages/Posts";
 import Error from "../pages/Error";
-import PostIdPage from "../pages/PostIdPage";
+import MovieIdPage from "../pages/MovieIdPage";
 import Login from "../pages/Login";
-import {AuthContext} from "../context";
+import {AppContext} from "../context/app.context";
+import Movies from "../pages/Movies";
 
 const AppRouter = () => {
-    const {isAuth, isLoading} = useContext(AuthContext)
+    const {default: data} = useContext(AppContext)
 
-    if (isLoading) {
+    if (data) {
         return <h1>Загрузка...</h1>
     }
     const privateRoutes = (
         <Routes>
             <Route path="/" element={<About />} /> {/* Дефолтный маршрут */}
-            <Route path="/posts/:id" element={<PostIdPage/>}/>
+            <Route path="/posts/:id" element={<MovieIdPage/>}/>
             <Route path="/about" element={<About />} />
-            <Route path="/posts" element={<Posts />} />
+            <Route path="/posts" element={<Movies />} />
             <Route path="*" element={<Error />} />
         </Routes>
     );
@@ -31,7 +31,7 @@ const AppRouter = () => {
         </Routes>
     );
 
-    return isAuth ? privateRoutes : publicRoutes;
+    //return isAuth ? privateRoutes : publicRoutes;
 };
 
 export default AppRouter;

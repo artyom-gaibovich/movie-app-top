@@ -1,7 +1,7 @@
 import React from "react";
 import {MovieItemProps} from "./MovieItem.props";
-import {Button} from "../Button/Button";
 import {useNavigate} from "react-router-dom";
+import Button from "../Button/Button";
 
 
 const MovieItem = ({movie, removeMovie} : MovieItemProps) => {

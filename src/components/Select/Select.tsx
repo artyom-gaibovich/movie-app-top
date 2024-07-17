@@ -3,7 +3,7 @@ import {SelectProps} from "./Select.props";
 
 const Select = ({options, defaultValue, value, setValue} : SelectProps) => {
     return (
-        <select onChange={e => setValue(e.target.value)}
+        <select onChange={(e: any) => setValue(e.target.value)}
                 value={value}>
             <option disabled value="">{defaultValue}</option>
             {options.map(option => {
