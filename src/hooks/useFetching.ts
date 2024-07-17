@@ -1,7 +1,6 @@
 import {useState} from "react";
-import PostService from "../API/JsonPlaceholder";
 
-export const useFetching = (callback) => {
+export const useFetching = (callback : any) => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError ] = useState('')
     const fetching = async () => {
@@ -10,7 +9,9 @@ export const useFetching = (callback) => {
             await callback()
         }
         catch (e) {
-            setError(e.message)
+            if (e instanceof Error) {
+                setError(e.message)
+            }
         }
         finally {
             setIsLoading(false)
