@@ -6,5 +6,5 @@ export interface SelectProps extends DetailedHTMLProps<HTMLAttributes<HTMLSelect
     value : string;
     setValue: (value : string) => void;
 
-    options : {value : number, name : string}[]
+    options : {value : string, name : string}[]
 }

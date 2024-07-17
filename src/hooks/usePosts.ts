@@ -1,24 +1,21 @@
 import {useMemo} from "react";
+import {IMovie} from "../interfaces/movie.interface";
 
 
 console.log()
-/*
-export const useSortedPosts = (Movies.tsx, sort) => {
-    const sortedPosts = useMemo(() => {
+export const useSortedMovies = (movies: IMovie[], sort: string) => {
+    let sortedMovies : IMovie[]= useMemo(() => {
         if (sort) {
-            return [...Movies.tsx.sort((a,b) => a[sort].localeCompare(b[sort]))]
+            return [...movies.sort((a,b) => a.[sort].localeCompare(b[sort]))]
         }
-        return Movies.tsx
-    }, [sort, Movies.tsx])
-    return sortedPosts
+        return sortedMovies
+    }, [sort, movies])
+    return sortedMovies
 }
 
-export const usePosts = (Movies.tsx, sort, query) => {
-    const sortedPosts = useSortedPosts(Movies.tsx, sort)
-
-    const sortedAndSearchPosts = useMemo(() => {
-        return sortedPosts.filter(post => post.title.toLowerCase().includes(query.toLowerCase()  ))
-    }, [query, sortedPosts])
-
-    return sortedAndSearchPosts
-}*/
+export const useMovies = (movies: IMovie[], sort: "title", query: string) => {
+    const sortedMovies = useSortedMovies(movies, sort)
+    return useMemo(() => {
+        return sortedMovies.filter((movie: IMovie) => movie.title.toLowerCase().includes(query.toLowerCase()))
+    }, [query, sortedMovies])
+}

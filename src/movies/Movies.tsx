@@ -1,9 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import {useFetching} from "../hooks/useFetching";
+import MovieAPI from "../API/MovieAPI";
+import {useObserver} from "../hooks/useObserver";
+import {IMovie} from "../interfaces/movie.interface";
+import {getPageCount} from "../utils/getPageCount";
+import {useMovies} from "../hooks/usePosts";
+import {IMovieFilter} from "../interfaces/movie-filter.interface";
 
 const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
 
-    const [posts, setPosts] = useState([])
-    const [filter, setFilter] = useState({sort : '', query : ''})
+    const [movies, setMovies] = useState<IMovie[]>([])
+    const [filter, setFilter] = useState<IMovieFilter>({sort : '', query : ''})
     const [isModal, setModal] = useState(false)
     const [totalPages, setTotalPages] = useState(0)
     const [limit, setLimit] = useState(10)
@@ -11,9 +18,8 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
 
     const lastElement= useRef()
     const [fetchPosts, isPostsLoading, errorPosts ] = useFetching(async () => {
-        const response = await PostService.getAll(limit,page)
-        setPosts([...posts, ...response.data])
-        const totalCount = response.headers['x-total-count']
+        const {fetchedMovies, totalCount} = await MovieAPI.getAll(limit,page)
+        setMovies([...movies, ...fetchedMovies])
         setTotalPages(getPageCount(totalCount, limit));
     })
 
@@ -21,14 +27,14 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
         setPage(page + 1)
     })
     useEffect(() => {
-        fetchPosts()
+        () => fetchPosts
     }, [page, limit]);
 
-    function createPost(newPost) {
-        setPosts([...posts, newPost])
+    function createPost(newMovie: IMovie) {
+        setMovies([...movies, newMovie])
         setModal(false)
     }
-    const sortedAndSearchPosts = usePosts(posts, filter.sort, filter.query)
+    const sortedAndSearchPosts = useMovies(movies, filter.sort, filter.query)
     function removePost(post)  {
         setPosts(posts.filter(p => p.id !== post.id ))
     }
