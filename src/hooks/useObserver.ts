@@ -1,12 +1,12 @@
-import {useEffect, useRef} from "react";
+import {MutableRefObject, useEffect, useRef} from "react";
 
-export const useObserver = (ref, canLoad, isLoading, callback) => {
+export const useObserver = (ref: IntersectionObserver, canLoad: boolean, isLoading: boolean, callback: Function) => {
     const observer = useRef()
 
     useEffect(() => {
         if (isLoading) return;
         if (observer.current) observer.current.disconnect();
-        var cb = function (entries, observer) {
+        var cb: IntersectionObserverCallback = function (entries, observer) {
             if (entries[0].isIntersecting && canLoad) {
                 callback()
 

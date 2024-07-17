@@ -1,6 +1,6 @@
 
-export type SortableKeys = "title" | "director" | "genre"; // Добавьте сюда все нужные ключи
+export type SortableKeys = "title" | "director"; // Добавьте сюда все нужные ключи
 export interface IMovieFilter {
-    sort : string
-    query : string
+    sort : SortableKeys
+    query :string
 }

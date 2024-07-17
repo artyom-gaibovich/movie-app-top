@@ -6,11 +6,13 @@ import {IMovie} from "../interfaces/movie.interface";
 import {getPageCount} from "../utils/getPageCount";
 import {useMovies} from "../hooks/usePosts";
 import {IMovieFilter} from "../interfaces/movie-filter.interface";
+import Button from "../components/Button/Button";
+import Modal from "../components/Modal/Modal";
 
 const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
 
     const [movies, setMovies] = useState<IMovie[]>([])
-    const [filter, setFilter] = useState<IMovieFilter>({sort : '', query : ''})
+    const [filter, setFilter] = useState<IMovieFilter>({sort : "title", query : ''})
     const [isModal, setModal] = useState(false)
     const [totalPages, setTotalPages] = useState(0)
     const [limit, setLimit] = useState(10)
@@ -35,8 +37,8 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
         setModal(false)
     }
     const sortedAndSearchPosts = useMovies(movies, filter.sort, filter.query)
-    function removePost(post)  {
-        setPosts(posts.filter(p => p.id !== post.id ))
+    function removePost(movie: IMovie)  {
+        setMovies(movies.filter(p => p.id !== movie.id ))
     }
 
     const changePage = (page) => {
@@ -44,10 +46,10 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     }
     return (
         <div className="App">
-            <MyButton onClick={() => setModal(true)}>Создать</MyButton>
-            <MyModal visible={isModal} setVisible={setModal}>
+            <Button onClick={() => setModal(true)}>Создать</Button>
+            <Modal visible={isModal} setVisible={setModal}>
                 <PostForm createPost={createPost}></PostForm>
-            </MyModal>
+            </Modal>
             <hr style={{margin : '15px 0'}}/>
             <PostFilter filter={filter} setFilter={setFilter}>
 
