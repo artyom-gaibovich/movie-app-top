@@ -17,4 +17,6 @@ export interface IMovie {
     production: string
     website: string
     reviews: string[]
+
+    totalCount: number;
 }

@@ -9,9 +9,7 @@ export const useFetching = (callback : any) => {
             await callback()
         }
         catch (e) {
-            if (e instanceof Error) {
-                setError(e.message)
-            }
+            setError(JSON.stringify(e))
         }
         finally {
             setIsLoading(false)

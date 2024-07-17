@@ -3,13 +3,16 @@ import {IMovie} from "../interfaces/movie.interface";
 
 export default class MovieAPI {
     static async getAll(limit = 10, page = 1) {
-        const {data: movies} = await axios.get<IMovie[]>('http://localhost:3200/api/movie/', {
+        const {data: fetchedMovies, headers: totalCount} = await axios.get<IMovie[]>('http://localhost:3200/api/movie/', {
             params : {
                 _limit : limit,
                 _page : page
             }
         })
-        return movies
+        return {
+            fetchedMovies : fetchedMovies,
+            totalCount: totalCount['x-total-count']
+        }
     }
 
     static async getById(id : number) {
