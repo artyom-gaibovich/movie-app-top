@@ -11,35 +11,36 @@ const MovieIdPage = () => {
     const [comments, setComments] = useState([])
 
     const [fetchMovieById, isPostLoading, postError] = useFetching(async () => {
-        const fetchedMovie = await MovieAPI.getById(Number(params.id))
+
+        const fetchedMovie = await MovieAPI.getById(String(params.id))
         setMovie(fetchedMovie)
     })
 
-    /*const [fetchCommentsById, isCommentsLoading, commentError] = useFetching(async () => {
-        const response = await MovieAPI.getCommentsById(params.id)
+    const [fetchCommentsById, isCommentsLoading, commentError] = useFetching(async () => {
+        const response = await MovieAPI.getCommentsById(Number(params.id))
         setComments(response.data)
-    })*/
-
+    })
     useEffect(() => {
-        () => fetchMovieById
-        //fetchCommentsById()
+        fetchMovieById()
+        fetchCommentsById()
     }, []);
 
     return (
         <div>
-            <h1>Вы открыли страницу фильма c ID {params.id}</h1>
+            <h1>Вы открыли страницу фильма c ID {params._id}</h1>
             {isPostLoading
                 ? <h1>Идет загрузка фильмов...</h1>
-                : <div><h1>{(movie as IMovie).title}</h1><p>{(movie as IMovie).reviews}</p></div>
+                : <div>
+                    <img style={{width: "250px"}} src="https://random-image-pepebigotes.vercel.app/api/random-image"/>
+                </div>
             }
-           {/* <div>
+            <div>
                 {comments.map(comment => {
                     return <div style={{margin : '15px 20px'}}>
-                        <h4>{comment.email}</h4>
-                        <p>{comment.body}</p>
+                        {JSON.stringify(comment)}
                     </div>
                 })}
-            </div>*/}
+            </div>
         </div>
     );
 };

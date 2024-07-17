@@ -43,7 +43,7 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     }
     const sortedAndSearchMovies = useMovies(movies, filter.sort, filter.query)
     function removeMovie(movie: IMovie)  {
-        setMovies(movies.filter(p => p.id !== movie.id ))
+        setMovies(movies.filter(p => p._id !== movie._id ))
     }
 
     const changePage = (page: number) => {

@@ -3,12 +3,7 @@ import {IMovie} from "../interfaces/movie.interface";
 
 export default class MovieAPI {
     static async getAll(limit = 10, page = 1) {
-        const {data: fetchedMovies, headers: totalCount} = await axios.get<IMovie[]>('https://freetestapi.com/api/v1/movies', {
-            params : {
-                _limit : limit,
-                _page : page
-            }
-        })
+        const {data: fetchedMovies, headers: totalCount} = await axios.get<IMovie[]>('http://localhost:3200/api/movie')
         console.log(fetchedMovies)
         return {
             fetchedMovies : fetchedMovies,
@@ -16,14 +11,15 @@ export default class MovieAPI {
         }
     }
 
-    static async getById(id : number) {
-        const {data: movie} = await axios.get<IMovie>('http://localhost:3000/movie'+id)
+    static async getById(_id : string) {
+        const {data: movie} = await axios.get<IMovie>(`http://localhost:3200/api/movie/${_id}`)
         return movie
     }
 
-   /* static async getCommentsById(id : number) {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+    static async getCommentsById(_id : number) {
+        _id=1;
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${_id}/comments`)
         return response
-    }*/
+    }
 
 }

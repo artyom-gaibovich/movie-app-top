@@ -11,7 +11,7 @@ const MovieList = ({movies, removeMovie, title} : MovieListProps) => {
         <div>
             <h1 style={{textAlign: "center"}}>{title}</h1>
             {movies.map(movie => {
-                return <MovieItem removeMovie={removeMovie} movie={movie} key={movie.id}></MovieItem>
+                return <MovieItem removeMovie={removeMovie} movie={movie} key={movie._id}></MovieItem>
             })}
         </div>
     );
