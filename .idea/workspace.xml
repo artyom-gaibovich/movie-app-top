@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b34e08e4-bb54-4998-ac55-4b02e9fce84c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.3a06669d.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.3a06669d.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.3a06669d.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.3a06669d.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.51072bb0.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.51072bb0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.51072bb0.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.51072bb0.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.51072bb0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.51072bb0.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/MockComments.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/MockData.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/MockMovies.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/MovieAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CommentItem/CommentItem.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CommentItem/CommentItem.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CommentItem/CommentItem.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieFilter/MovieFilter.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieFilter/MovieFilter.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieFilter/MovieFilter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieForm/MovieForm.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieForm/MovieForm.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieForm/MovieForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieItem/MovieItem.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieItem/MovieItem.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieItem/MovieItem.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieList/MovieList.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieList/MovieList.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieList/MovieList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Select/Select.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Select/Select.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Select/Select.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/app.context.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFetching.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useMovies.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useObserver.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/comment.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/movie-filter.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/movie.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Footer/Footer.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Footer/Footer.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Footer/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header/Header.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header/Header.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Layout.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Layout.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Sidebar/Sidebar.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Sidebar/Sidebar.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Sidebar/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/About.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MovieIdPage/MovieIdPage.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MovieIdPage/MovieIdPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Movies.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/AppRouter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getPageCount.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="features/task7_make_mocks" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2jLJ7KOsbtIXD6JakB5kfP4UtPR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "deploy/task1__github__pages",
+    "last_opened_file_path": "/home/artyom/WebstormProjects/movie-app-top/src/API",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "/home/artyom/Programms/IdeaProgramms/WebStorm-232.10227.9/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/API" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/MovieForm" />
+      <recent name="$PROJECT_DIR$/src/components/CommentItem" />
+      <recent name="$PROJECT_DIR$/src/pages/MovieIdPage" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/pages/MovieIdPage" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+      <recent name="$PROJECT_DIR$/src/router" />
+      <recent name="$PROJECT_DIR$/src/components/Select" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b34e08e4-bb54-4998-ac55-4b02e9fce84c" name="Changes" comment="" />
+      <created>1721160254491</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721160254491</updated>
+      <workItem from="1721160255512" duration="1146000" />
+      <workItem from="1721166282526" duration="3306000" />
+      <workItem from="1721174105206" duration="10398000" />
+      <workItem from="1721184828567" duration="4733000" />
+      <workItem from="1721236430199" duration="29174000" />
+      <workItem from="1721262550660" duration="5874000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/API/MockData.ts</url>
+          <line>59</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
