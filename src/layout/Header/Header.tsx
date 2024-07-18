@@ -21,11 +21,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 				<Link to="/movie" className={styles.navItem}>Фильмы</Link>
 				<Link to="/about" className={styles.navItem}>О нас</Link>
 			</nav>
-			<div className={styles.menuIcon} onClick={toggleMenu}>
-				<span className={styles.menuIconBar}></span>
-				<span className={styles.menuIconBar}></span>
-				<span className={styles.menuIconBar}></span>
-			</div>
+
 			{isOpen && (
 				<motion.div
 					className={styles.mobileMenu}

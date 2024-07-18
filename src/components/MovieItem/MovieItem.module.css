@@ -71,3 +71,9 @@
         width: 500px;
     }
 }
+
+.star-icon {
+    color: #f8ce0b;
+    font-size: 20px;
+    margin-right: 2px;
+}

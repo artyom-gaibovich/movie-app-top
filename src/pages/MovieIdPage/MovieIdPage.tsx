@@ -5,6 +5,7 @@ import { IMovie } from "../../interfaces/movie.interface";
 import { useFetching } from "../../hooks/useFetching";
 import MovieAPI from "../../API/MovieAPI";
 import CommentItem from "../../components/CommentItem/CommentItem";
+import {IoStar} from "react-icons/io5";
 
 const MovieIdPage = () => {
     const params = useParams<{ id: string }>();
@@ -39,12 +40,23 @@ const MovieIdPage = () => {
     return (
         <div className={styles['movieIdPage']}>
             <div className={styles['movieDetails']}>
+
                 <div className={styles['moviePoster']}>
+
                     <img src={movie.poster} alt={movie.title} />
                 </div>
                 <div className={styles['movieInfo']}>
                     <h1 className={styles['movie-title']}>{movie.title}</h1>
                     <div className={styles['movie-meta']}>
+                        <div className={styles['movie-rating']}>
+                            <strong>Рейтинг:</strong>
+                            <div className={styles['rating-stars']}>
+                                {Array.from({ length: Math.floor(movie.rating) }, (_, index) => (
+                                    <IoStar key={index} className={styles['star-icon']} />
+                                ))}
+                            </div>
+                        </div>
+
                         <p><strong>Год:</strong> {movie.year}</p>
                         <p><strong>Продолжительность:</strong> {movie.runtime} min</p>
                         <p><strong>Жанр:</strong> {movie.genre.join(', ')}</p>
@@ -52,9 +64,10 @@ const MovieIdPage = () => {
                         <p><strong>Язык:</strong> {movie.language}</p>
                         <p><strong>Режиссёр:</strong> {movie.director}</p>
                         <p><strong>Актёры:</strong> {movie.actors.join(', ')}</p>
-                        <p><strong>Рейтинг:</strong> {movie.rating}</p>
+
                     </div>
                 </div>
+
             </div>
 
             <div className={styles['movie-plot']}>
