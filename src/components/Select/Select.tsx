@@ -1,15 +1,23 @@
 import React from 'react';
-import {SelectProps} from "./Select.props";
+import styles from './Select.module.css';
+import { SelectProps } from './Select.props';
 
-const Select = ({options, defaultValue, value, setValue} : SelectProps) => {
+const Select = ({ options, defaultValue, value, setValue } : SelectProps) => {
     return (
-        <select onChange={(e: any) => setValue(e.target.value)}
-                value={value}>
-            <option disabled value="">{defaultValue}</option>
-            {options.map(option => {
-                return <option key={option.value} value={option.value}>{option.name}</option>
-            })}
-        </select>
+        <div className={styles['custom-select-wrapper']}>
+            <select
+                className={styles["custom-select"]}
+                onChange={(e: any) => setValue(e.target.value)}
+                value={value}
+            >
+                <option disabled value="">{defaultValue}</option>
+                {options.map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </select>
+        </div>
     );
 };
 

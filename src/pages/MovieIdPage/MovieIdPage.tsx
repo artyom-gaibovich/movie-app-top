@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './MovieIdPage.module.css';
-import {IMovie} from "../../interfaces/movie.interface";
-import {useFetching} from "../../hooks/useFetching";
+import { IMovie } from "../../interfaces/movie.interface";
+import { useFetching } from "../../hooks/useFetching";
 import MovieAPI from "../../API/MovieAPI";
-import CommentItem from "../../components/CommentItem/CommentItem"; // Import CSS module
+import CommentItem from "../../components/CommentItem/CommentItem";
+import {IoStar} from "react-icons/io5";
 
 const MovieIdPage = () => {
     const params = useParams<{ id: string }>();
@@ -37,48 +38,48 @@ const MovieIdPage = () => {
     if (!movie) return <div>Loading...</div>;
 
     return (
-        <div className={styles['movie-detail']}>
-            <div className={styles['movie-poster']}>
-                <img src={movie.poster} alt={movie.title} />
-            </div>
-            <div className={styles['movie-info']}>
-                <h1 className={styles['movie-title']}>{movie.title}</h1>
-                <div className={styles['movie-meta']}>
-                    <p><strong>Year:</strong> {movie.year}</p>
-                    <p><strong>Runtime:</strong> {movie.runtime} min</p>
-                    <p><strong>Genre:</strong> {movie.genre.join(', ')}</p>
-                    <p><strong>Country:</strong> {movie.country}</p>
-                    <p><strong>Language:</strong> {movie.language}</p>
-                    <p><strong>Director:</strong> {movie.director}</p>
-                    <p><strong>Actors:</strong> {movie.actors.join(', ')}</p>
-                    <p><strong>Rating:</strong> {movie.rating}</p>
+        <div className={styles['movieIdPage']}>
+            <div className={styles['movieDetails']}>
+
+                <div className={styles['moviePoster']}>
+
+                    <img src={movie.poster} alt={movie.title} />
+                </div>
+                <div className={styles['movieInfo']}>
+                    <h1 className={styles['movie-title']}>{movie.title}</h1>
+                    <div className={styles['movie-meta']}>
+                        <div className={styles['movie-rating']}>
+                            <strong>Рейтинг:</strong>
+                            <div className={styles['rating-stars']}>
+                                {Array.from({ length: Math.floor(movie.rating) }, (_, index) => (
+                                    <IoStar key={index} className={styles['star-icon']} />
+                                ))}
+                            </div>
+                        </div>
+
+                        <p><strong>Год:</strong> {movie.year}</p>
+                        <p><strong>Продолжительность:</strong> {movie.runtime} min</p>
+                        <p><strong>Жанр:</strong> {movie.genre.join(', ')}</p>
+                        <p><strong>Страна:</strong> {movie.country}</p>
+                        <p><strong>Язык:</strong> {movie.language}</p>
+                        <p><strong>Режиссёр:</strong> {movie.director}</p>
+                        <p><strong>Актёры:</strong> {movie.actors.join(', ')}</p>
+
+                    </div>
                 </div>
 
-
-
-
-
             </div>
 
-
             <div className={styles['movie-plot']}>
-                <h2>Plot</h2>
+                <h2>Описание</h2>
                 <p>{movie.plot}</p>
             </div>
 
-
-
             <div className={styles['movie-comments']}>
-                <div className={styles['movie-actions']}>
-                    <a href={movie.trailer} target="_blank" rel="noopener noreferrer">
-                        Watch Trailer
-                    </a>
-                </div>
 
-                <h2>Comments</h2>
+                <h2>Отзывы зрителей</h2>
                 {comments.map((comment, index) => (
-                    <CommentItem comment={comment}>
-                    </CommentItem>
+                    <CommentItem key={index} comment={comment} />
                 ))}
             </div>
         </div>

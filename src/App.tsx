@@ -7,6 +7,8 @@ import {Header} from "./layout/Header/Header";
 function App() {
   return (
       <BrowserRouter>
+        <Header>
+        </Header>
         <AppRouter></AppRouter>
       </BrowserRouter>
   );

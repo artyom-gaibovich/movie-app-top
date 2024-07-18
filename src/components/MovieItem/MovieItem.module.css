@@ -61,3 +61,19 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+@media (max-width: 765px) {
+    .movie-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .movie-poster {
+        width: 500px;
+    }
+}
+
+.star-icon {
+    color: #f8ce0b;
+    font-size: 20px;
+    margin-right: 2px;
+}

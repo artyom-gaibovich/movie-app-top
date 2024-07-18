@@ -1,5 +1,5 @@
 export interface IMovie {
-    _id: number
+    _id?: number
     title: string
     year: number
     genre: string[]
