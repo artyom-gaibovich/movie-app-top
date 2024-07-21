@@ -3,11 +3,16 @@ import {IMovie} from "../interfaces/movie.interface";
 import {SortableKeys} from "../interfaces/movie-filter.interface";
 
 
-console.log()
 export const useSortedMovies = (movies: IMovie[], sort: SortableKeys) => {
     let sortedMovies : IMovie[]= useMemo(() => {
         if (sort) {
-            return [...movies.sort((a,b) => a[sort].localeCompare(b[sort]))]
+            if (sort === "rating") {
+                return [...movies.sort((a,b) => a[sort] - (b[sort]))]
+            }
+            return [...movies.sort((a,b) => {
+                return a[sort].localeCompare(b[sort])
+            })]
+
         }
         return sortedMovies
     }, [sort, movies])

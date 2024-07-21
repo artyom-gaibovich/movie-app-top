@@ -26,6 +26,7 @@ const Movies = ({...props}: Record<string, any>)   : JSX.Element => {
     const lastElement: MutableRefObject<any>  = useRef()
     const [fetchMovies, isMoviesLoading, errorMovies ] = useFetching(async () => {
         const {fetchedMovies, totalCount} = await MovieAPI.getAll(limit,page)
+        console.log(fetchedMovies, 'ss')
         setMovies([...movies, ...fetchedMovies])
         setTotalPages(getPageCount(totalCount, limit));
     })
